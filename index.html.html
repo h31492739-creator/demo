@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Da Vinci Grill | Hyderabad</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --gold:#d9b56b;
+  --gold2:#f4d58e;
+  --black:#070707;
+  --dark:#101010;
+  --card:#151515;
+  --white:#f7f4ed;
+  --muted:#999;
+  --line:rgba(255,255,255,.09);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:Inter,Arial,sans-serif;
+}
+
+button,input,select,textarea{font:inherit}
+
+button{cursor:pointer}
+
+header{
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:999;
+  background:rgba(5,5,5,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  max-width:1450px;
+  margin:auto;
+  height:82px;
+  padding:0 30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-family:"Cormorant Garamond",serif;
+  font-size:35px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.logo span{
+  color:var(--gold2);
+}
+
+.logo small{
+  display:block;
+  font-family:Inter;
+  font-size:8px;
+  letter-spacing:4px;
+  color:#888;
+  margin-top:-7px;
+}
+
+.navlinks{
+  display:flex;
+  gap:30px;
+}
+
+.navlinks a{
+  color:#ccc;
+  text-decoration:none;
+  font-size:13px;
+}
+
+.navlinks a:hover{color:var(--gold2)}
+
+.navbuttons{
+  display:flex;
+  gap:10px;
+}
+
+.gold{
+  border:0;
+  padding:12px 20px;
+  color:#111;
+  font-weight:700;
+  border-radius:5px;
+  background:linear-gradient(135deg,#b88636,#f5d58f,#b88636);
+}
+
+.outline{
+  border:1px solid rgba(217,181,107,.35);
+  background:transparent;
+  color:var(--gold2);
+  padding:11px 18px;
+  border-radius:5px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  position:relative;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.62),rgba(0,0,0,.28)),
+    url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,#070707,transparent 38%);
+}
+
+.heroContent{
+  position:relative;
+  z-index:2;
+  max-width:1450px;
+  width:100%;
+  margin:auto;
+  padding:130px 30px 80px;
+}
+
+.kicker{
+  color:var(--gold2);
+  font-size:11px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(65px,9vw,125px);
+  line-height:.82;
+  max-width:800px;
+  font-weight:600;
+}
+
+.hero h1 span{
+  color:var(--gold2);
+}
+
+.heroText{
+  max-width:560px;
+  color:#c5c5c5;
+  line-height:1.8;
+  margin:30px 0;
+}
+
+.heroButtons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.heroBottom{
+  position:absolute;
+  bottom:35px;
+  right:35px;
+  z-index:3;
+  display:flex;
+  gap:35px;
+}
+
+.heroStat strong{
+  display:block;
+  color:var(--gold2);
+  font-family:"Cormorant Garamond";
+  font-size:32px;
+}
+
+.heroStat small{color:#999}
+
+/* SECTIONS */
+
+section{
+  max-width:1450px;
+  margin:auto;
+  padding:110px 30px;
+}
+
+.sectionHead{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:20px;
+  margin-bottom:40px;
+}
+
+.title{
+  font-family:"Cormorant Garamond";
+  font-size:58px;
+  line-height:.95;
+}
+
+.sub{
+  color:#929292;
+  max-width:520px;
+  line-height:1.7;
+}
+
+/* MENU */
+
+.menuTools{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.search{
+  width:250px;
+  padding:12px 18px;
+  border-radius:30px;
+  background:#111;
+  border:1px solid #292929;
+  color:#fff;
+  outline:none;
+}
+
+.search:focus{border-color:var(--gold)}
+
+.filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.filter{
+  border:1px solid #292929;
+  background:#111;
+  color:#aaa;
+  border-radius:30px;
+  padding:10px 16px;
+}
+
+.filter.active,
+.filter:hover{
+  background:var(--gold2);
+  color:#111;
+  border-color:var(--gold2);
+}
+
+.menuGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
+
+.card{
+  background:linear-gradient(145deg,#181818,#101010);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(217,181,107,.4);
+  box-shadow:0 25px 70px rgba(0,0,0,.45);
+}
+
+.photo{
+  height:245px;
+  position:relative;
+  overflow:hidden;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.card:hover .photo img{
+  transform:scale(1.08);
+}
+
+.tag{
+  position:absolute;
+  top:14px;
+  left:14px;
+  padding:6px 11px;
+  background:var(--gold2);
+  color:#111;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:700;
+}
+
+.cardBody{
+  padding:20px;
+}
+
+.cardBody h3{
+  font-family:"Cormorant Garamond";
+  font-size:28px;
+  margin-bottom:7px;
+}
+
+.cardBody p{
+  color:#888;
+  font-size:12px;
+  line-height:1.6;
+  min-height:40px;
+}
+
+.cardBottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:18px;
+}
+
+.price{
+  color:var(--gold2);
+  font-weight:700;
+}
+
+.plus{
+  width:39px;
+  height:39px;
+  border-radius:50%;
+  border:1px solid rgba(217,181,107,.4);
+  background:transparent;
+  color:var(--gold2);
+  font-size:21px;
+}
+
+.plus:hover{
+  background:var(--gold2);
+  color:#111;
+}
+
+/* EXPERIENCE */
+
+.experience{
+  background:radial-gradient(
+    circle at 20% 50%,
+    rgba(217,181,107,.09),
+    transparent 32%
+  );
+}
+
+.experienceGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.experienceImage{
+  height:590px;
+  overflow:hidden;
+  border-radius:16px;
+}
+
+.experienceImage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.goldLine{
+  height:2px;
+  width:65px;
+  background:var(--gold);
+  margin:22px 0;
+}
+
+.experienceText{
+  color:#999;
+  line-height:1.9;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:30px;
+}
+
+.feature{
+  border:1px solid #242424;
+  background:#101010;
+  border-radius:9px;
+  padding:20px;
+}
+
+.feature b{
+  display:block;
+  color:var(--gold2);
+  margin-bottom:8px;
+}
+
+.feature span{
+  color:#777;
+  font-size:11px;
+  line-height:1.5;
+}
+
+/* CTA */
+
+.cta{
+  border:1px solid rgba(217,181,107,.3);
+  border-radius:18px;
+  padding:65px;
+  background:
+    linear-gradient(110deg,rgba(217,181,107,.09),transparent),
+    #111;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.cta h2{
+  font-family:"Cormorant Garamond";
+  font-size:58px;
+}
+
+.cta p{
+  color:#888;
+  margin-top:10px;
+}
+
+/* CART */
+
+.cart{
+  position:fixed;
+  top:0;
+  right:-430px;
+  width:410px;
+  max-width:94%;
+  height:100vh;
+  background:#111;
+  border-left:1px solid rgba(217,181,107,.3);
+  z-index:3000;
+  padding:28px;
+  transition:.35s;
+  display:flex;
+  flex-direction:column;
+}
+
+.cart.open{right:0}
+
+.cartHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #292929;
+  padding-bottom:18px;
+}
+
+.cartHeader h2{
+  font-family:"Cormorant Garamond";
+  font-size:36px;
+}
+
+.close{
+  background:none;
+  border:0;
+  color:#aaa;
+  font-size:28px;
+}
+
+.cartItems{
+  flex:1;
+  overflow:auto;
+}
+
+.cartItem{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:17px 0;
+  border-bottom:1px solid #222;
+}
+
+.cartItem small{
+  display:block;
+  color:#777;
+  margin-top:5px;
+}
+
+.remove{
+  background:none;
+  border:0;
+  color:#d77;
+}
+
+.cartFooter{
+  border-top:1px solid #292929;
+  padding-top:20px;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  font-size:21px;
+  margin-bottom:17px;
+}
+
+/* ADMIN */
+
+.admin{
+  position:fixed;
+  inset:0;
+  z-index:4000;
+  background:rgba(0,0,0,.8);
+  backdrop-filter:blur(12px);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+.admin.show{display:flex}
+
+.adminBox{
+  width:100%;
+  max-width:1100px;
+  max-height:93vh;
+  overflow:auto;
+  background:#111;
+  border:1px solid rgba(217,181,107,.3);
+  border-radius:18px;
+  padding:30px;
+}
+
+.adminHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:28px;
+}
+
+.adminHeader h2{
+  font-family:"Cormorant Garamond";
+  font-size:43px;
+}
+
+.formGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  color:#999;
+  font-size:11px;
+}
+
+.field input,
+.field textarea,
+.field select{
+  background:#080808;
+  color:#fff;
+  border:1px solid #292929;
+  padding:12px;
+  border-radius:6px;
+  outline:none;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+  border-color:var(--gold);
+}
+
+.preview{
+  width:110px;
+  height:80px;
+  border-radius:7px;
+  object-fit:cover;
+}
+
+.adminButtons{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.adminList{
+  margin-top:35px;
+}
+
+.adminRow{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  border:1px solid #242424;
+  border-radius:8px;
+  padding:10px;
+  margin-bottom:8px;
+}
+
+.adminRow img{
+  width:65px;
+  height:55px;
+  border-radius:6px;
+  object-fit:cover;
+}
+
+.adminInfo{
+  flex:1;
+}
+
+.adminInfo strong{
+  display:block;
+}
+
+.adminInfo small{
+  color:#777;
+}
+
+.adminRow button{
+  border:1px solid #303030;
+  background:#181818;
+  color:#ddd;
+  padding:8px 11px;
+  border-radius:5px;
+}
+
+.delete{color:#e08080!important}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid #222;
+  padding:55px 20px;
+  text-align:center;
+  color:#666;
+}
+
+footer strong{
+  color:var(--gold2);
+}
+
+/* MOBILE */
+
+@media(max-width:1050px){
+  .menuGrid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:750px){
+
+  .nav{
+    height:70px;
+    padding:0 15px;
+  }
+
+  .navlinks{display:none}
+
+  .logo{font-size:28px}
+
+  .navbuttons .outline{display:none}
+
+  .heroContent{
+    padding:120px 20px 100px;
+  }
+
+  .hero h1{font-size:66px}
+
+  .heroBottom{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    margin-top:60px;
+    gap:20px;
+  }
+
+  section{padding:75px 18px}
+
+  .sectionHead{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .title{font-size:45px}
+
+  .menuGrid{
+    grid-template-columns:1fr;
+  }
+
+  .search{
+    width:100%;
+  }
+
+  .experienceGrid{
+    grid-template-columns:1fr;
+  }
+
+  .experienceImage{
+    height:400px;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .cta{
+    padding:35px 25px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .cta h2{font-size:45px}
+
+  .formGrid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .adminRow{
+    align-items:flex-start;
+  }
+
+  .adminRow img{
+    width:55px;
+    height:50px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav class="nav">
+
+  <div class="logo">
+    DA <span>VINCI</span>
+    <small>GRILL • HYDERABAD</small>
+  </div>
+
+  <div class="navlinks">
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="navbuttons">
+    <button class="outline" onclick="openAdmin()">⚙ Manage</button>
+    <button class="gold" onclick="openCart()">
+      Order <span id="cartCount">0</span>
+    </button>
+  </div>
+
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="heroContent">
+
+    <div class="kicker">
+      Hyderabad • Latifabad
+    </div>
+
+    <h1>
+      Taste The
+      <span>Art</span>
+      Of Grill.
+    </h1>
+
+    <p class="heroText">
+      An elevated dining experience featuring premium steaks,
+      sizzling platters, handcrafted burgers, seafood and signature
+      flavours — prepared to perfection.
+    </p>
+
+    <div class="heroButtons">
+
+      <button class="gold"
+        onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
+        Explore Menu
+      </button>
+
+      <button class="outline" onclick="openCart()">
+        Start Order
+      </button>
+
+    </div>
+
+    <div class="heroBottom">
+
+      <div class="heroStat">
+        <strong>4.2★</strong>
+        <small>Guest Rating</small>
+      </div>
+
+      <div class="heroStat">
+        <strong>70+</strong>
+        <small>Dishes</small>
+      </div>
+
+      <div class="heroStat">
+        <strong>HYD</strong>
+        <small>Latifabad</small>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section id="menu">
+
+  <div class="sectionHead">
+
+    <div>
+      <div class="kicker">Discover Our Menu</div>
+      <h2 class="title">The Da Vinci Collection</h2>
+    </div>
+
+    <p class="sub">
+      From signature steaks to handcrafted burgers,
+      sizzling dishes and refreshing drinks.
+    </p>
+
+  </div>
+
+
+  <div class="menuTools">
+
+    <input
+      class="search"
+      id="search"
+      placeholder="Search your favourite dish..."
+      oninput="renderMenu()"
+    >
+
+    <div class="filters" id="filters"></div>
+
+  </div>
+
+
+  <div class="menuGrid" id="menuGrid"></div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience" id="experience">
+
+  <div class="experienceGrid">
+
+    <div class="experienceImage">
+
+      <img
+        src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1400&q=90"
+        alt="Steak"
+      >
+
+    </div>
+
+
+    <div>
+
+      <div class="kicker">The Da Vinci Experience</div>
+
+      <h2 class="title">
+        Where Food<br>
+        Becomes <span style="color:var(--gold2)">Art.</span>
+      </h2>
+
+      <div class="goldLine"></div>
+
+      <p class="experienceText">
+        Every plate is designed to bring together flavour,
+        presentation and atmosphere. Whether you are joining
+        us for a family dinner or a special evening,
+        Da Vinci Grill turns every meal into an experience.
+      </p>
+
+
+      <div class="features">
+
+        <div class="feature">
+          <b>01 — Premium</b>
+          <span>Quality ingredients and carefully prepared dishes.</span>
+        </div>
+
+        <div class="feature">
+          <b>02 — Signature</b>
+          <span>Original flavours crafted for Da Vinci guests.</span>
+        </div>
+
+        <div class="feature">
+          <b>03 — Fresh</b>
+          <span>Prepared fresh for every order.</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section id="contact">
+
+  <div class="cta">
+
+    <div>
+
+      <div class="kicker">Your Table Awaits</div>
+
+      <h2>
+        Make Tonight<br>
+        <span style="color:var(--gold2)">Delicious.</span>
+      </h2>
+
+      <p>
+        Unit 3, Latifabad, Hyderabad
+      </p>
+
+    </div>
+
+    <button class="gold" onclick="openCart()">
+      View My Order →
+    </button>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <strong>DA VINCI GRILL</strong>
+
+  <br><br>
+
+  Main Auto Bhan Road • Latifabad Unit 3 • Hyderabad
+
+  <br><br>
+
+  © 2026 Da Vinci Grill — Demo Website
+
+</footer>
+
+
+<!-- CART -->
+
+<div class="cart" id="cart">
+
+  <div class="cartHeader">
+
+    <h2>Your Order</h2>
+
+    <button class="close" onclick="closeCart()">×</button>
+
+  </div>
+
+  <div class="cartItems" id="cartItems"></div>
+
+  <div class="cartFooter">
+
+    <div class="total">
+      <span>Total</span>
+      <strong id="total">Rs 0</strong>
+    </div>
+
+    <button class="gold" style="width:100%"
+      onclick="sendWhatsApp()">
+      Order on WhatsApp
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- ADMIN -->
+
+<div class="admin" id="admin">
+
+<div class="adminBox">
+
+  <div class="adminHeader">
+
+    <div>
+      <div class="kicker">Restaurant Control</div>
+      <h2>Menu Manager</h2>
+    </div>
+
+    <button class="close" onclick="closeAdmin()">×</button>
+
+  </div>
+
+
+  <div class="formGrid">
+
+    <div class="field">
+      <label>ITEM NAME</label>
+      <input id="name" placeholder="Da Vinci Special Steak">
+    </div>
+
+    <div class="field">
+      <label>PRICE</label>
+      <input id="price" type="number" placeholder="1560">
+    </div>
+
+    <div class="field">
+      <label>CATEGORY</label>
+
+      <select id="category">
+
+        <option>Steak</option>
+        <option>Chicken</option>
+        <option>Sizzling</option>
+        <option>Pizza</option>
+        <option>Burgers</option>
+        <option>Seafood</option>
+        <option>Soups</option>
+        <option>Chinese</option>
+        <option>Salad</option>
+        <option>Sides</option>
+        <option>Drinks</option>
+        <option>Dessert</option>
+
+      </select>
+
+    </div>
+
+    <div class="field">
+      <label>BADGE</label>
+      <input id="badge" placeholder="Best Seller">
+    </div>
+
+    <div class="field full">
+      <label>DESCRIPTION</label>
+      <textarea id="description" rows="3"
+        placeholder="Describe the dish..."></textarea>
+    </div>
+
+    <div class="field">
+      <label>FOOD PHOTO</label>
+      <input
+        id="photo"
+        type="file"
+        accept="image/*"
+        onchange="uploadPhoto(event)"
+      >
+    </div>
+
+    <div class="field">
+
+      <label>PHOTO PREVIEW</label>
+
+      <img
+        id="preview"
+        class="preview"
+        src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=500&q=80"
+      >
+
+    </div>
+
+  </div>
+
+
+  <div class="adminButtons">
+
+    <button class="gold" id="saveButton"
+      onclick="saveItem()">
+      ＋ Add Item
+    </button>
+
+    <button class="outline"
+      onclick="clearForm()">
+      Clear
+    </button>
+
+  </div>
+
+
+  <div class="adminList">
+
+    <div class="kicker">Current Menu</div>
+
+    <div id="adminList"></div>
+
+  </div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   DA VINCI MENU
+   Prices based on the currently listed menu.
+========================================================= */
+
+const defaultMenu = [
+
+{
+ id:1,
+ name:"Da Vinci Special Steak",
+ price:1560,
+ category:"Steak",
+ badge:"Signature",
+ description:"Spicy tender steak grilled to perfection with potatoes and cherry tomatoes.",
+ image:"https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:2,
+ name:"Royal Mushroom Steak",
+ price:1530,
+ category:"Steak",
+ badge:"Popular",
+ description:"Tender prime steak with creamy mushroom sauce and sautéed vegetables.",
+ image:"https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:3,
+ name:"Chimichurri Steak",
+ price:1610,
+ category:"Steak",
+ badge:"",
+ description:"Grilled beef topped with spicy chilli herb chimichurri sauce.",
+ image:"https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:4,
+ name:"Tenderloin Steak",
+ price:3450,
+ category:"Steak",
+ badge:"Chef Recommendation",
+ description:"Soft juicy tenderloin with garlic herb glaze, potatoes and vegetables.",
+ image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:5,
+ name:"Parmesan Crusted Delight",
+ price:1780,
+ category:"Chicken",
+ badge:"Popular",
+ description:"Crispy parmesan crusted chicken with herb béchamel sauce.",
+ image:"https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:6,
+ name:"Chicken Crunch",
+ price:1720,
+ category:"Chicken",
+ badge:"",
+ description:"Tender chicken breast with a golden crunchy crust and honey mustard.",
+ image:"https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:7,
+ name:"Beef Sizzling",
+ price:2250,
+ category:"Sizzling",
+ badge:"Sizzling",
+ description:"Char-grilled beef with onion, peppers, capsicum and tomatoes.",
+ image:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:8,
+ name:"Chicken Sizzling",
+ price:1700,
+ category:"Sizzling",
+ badge:"",
+ description:"Pan-seared chicken served sizzling with grilled vegetables.",
+ image:"https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:9,
+ name:"Creamy Alfredo Chicken Pizza",
+ price:1690,
+ category:"Pizza",
+ badge:"Popular",
+ description:"Thin crust pizza with creamy Alfredo sauce, chicken, herbs and cheese.",
+ image:"https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:10,
+ name:"BBQ Sizzlers Chicken Pizza",
+ price:1850,
+ category:"Pizza",
+ badge:"",
+ description:"Smoky BBQ sauce, tender chicken and onion on a premium crust.",
+ image:"https://images.unsplash.com/photo-1566843972142-a7fcb70de55a?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:11,
+ name:"Classic Beef Burger",
+ price:1150,
+ category:"Burgers",
+ badge:"Classic",
+ description:"Juicy beef patty with cheese, lettuce, onion and tomato.",
+ image:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:12,
+ name:"Mega Zinger Burger",
+ price:1300,
+ category:"Burgers",
+ badge:"Best Seller",
+ description:"Crispy chicken fillet with cheese and lettuce, served with fries.",
+ image:"https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:13,
+ name:"Dynamite Prawns",
+ price:1350,
+ category:"Seafood",
+ badge:"Popular",
+ description:"Fried prawns tossed in a bold creamy dynamite sauce.",
+ image:"https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:14,
+ name:"Seafood Platter",
+ price:2490,
+ category:"Seafood",
+ badge:"Premium",
+ description:"Fish, prawns and calamari served with tartare sauce and coleslaw.",
+ image:"https://images.unsplash.com/photo-1534939561126-855b8675edd7?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:15,
+ name:"Chicken Corn Soup",
+ price:650,
+ category:"Soups",
+ badge:"",
+ description:"Smooth comforting chicken corn soup with balanced spices.",
+ image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:16,
+ name:"Da Vinci Special Soup",
+ price:760,
+ category:"Soups",
+ badge:"Signature",
+ description:"Rich fusion soup with chicken, mushrooms, tofu and vegetables.",
+ image:"https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:17,
+ name:"Kung Pao Fusion Bowl",
+ price:1550,
+ category:"Chinese",
+ badge:"Special",
+ description:"Pan-fried chicken with Korean sauce, vegetables, chilli and peanuts.",
+ image:"https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:18,
+ name:"Chicken Chowmein",
+ price:1350,
+ category:"Chinese",
+ badge:"",
+ description:"Stir-fried chicken noodles tossed with Chinese vegetables.",
+ image:"https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:19,
+ name:"Da Vinci Platter",
+ price:1670,
+ category:"Sides",
+ badge:"Must Try",
+ description:"Chicken tenders, mozzarella sticks, wings, peri bites, onion rings and fries.",
+ image:"https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:20,
+ name:"Crispy Finger Fish",
+ price:1230,
+ category:"Seafood",
+ badge:"",
+ description:"Six crispy fish fingers served with fries and tartare sauce.",
+ image:"https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:21,
+ name:"Fresh Lime",
+ price:299,
+ category:"Drinks",
+ badge:"Fresh",
+ description:"Zesty refreshing drink made with fresh lime juice.",
+ image:"https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:22,
+ name:"Strawberry Lemonade",
+ price:650,
+ category:"Drinks",
+ badge:"",
+ description:"Refreshing lemonade infused with sweet strawberry flavour.",
+ image:"https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:23,
+ name:"Caramel Frappe",
+ price:790,
+ category:"Drinks",
+ badge:"Popular",
+ description:"Creamy blended frappe with rich caramel flavour.",
+ image:"https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:24,
+ name:"Mango Boba Tea",
+ price:790,
+ category:"Drinks",
+ badge:"New",
+ description:"Sweet tropical mango boba tea with chewy pearls.",
+ image:"https://images.unsplash.com/photo-1558857563-b371033873b8?auto=format&fit=crop&w=900&q=85",
+ available:true
+},
+
+{
+ id:25,
+ name:"Mint Mojito",
+ price:710,
+ category:"Drinks",
+ badge:"",
+ description:"Fresh mint and lime drink with a crisp refreshing flavour.",
+ image:"https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=85",
+ available:true
+}
+
+];
+
+
+let menu =
+JSON.parse(localStorage.getItem("davinciMenu"))
+|| defaultMenu;
+
+let cart=[];
+let active="All";
+let editId=null;
+let uploadedImage="";
+
+
+/* MENU */
+
+function renderFilters(){
+
+ let categories=[
+  "All",
+  ...new Set(menu.map(x=>x.category))
+ ];
+
+ document.getElementById("filters").innerHTML=
+ categories.map(x=>`
+
+ <button
+  class="filter ${x===active?"active":""}"
+  onclick="setCategory('${x}')">
+  ${x}
+ </button>
+
+ `).join("");
+
+}
+
+
+function setCategory(cat){
+
+ active=cat;
+ renderFilters();
+ renderMenu();
+
+}
+
+
+function renderMenu(){
+
+ let search=
+ document.getElementById("search")
+ .value
+ .toLowerCase();
+
+ let result=
+ menu.filter(item=>{
+
+   let catOK=
+   active==="All" ||
+   item.category===active;
+
+   let searchOK=
+   item.name.toLowerCase().includes(search) ||
+   item.description.toLowerCase().includes(search);
+
+   return catOK && searchOK;
+
+ });
+
+
+ let grid=
+ document.getElementById("menuGrid");
+
+
+ if(!result.length){
+
+   grid.innerHTML=
+   `<div style="grid-column:1/-1;text-align:center;padding:70px;color:#777">
+   No dishes found.
+   </div>`;
+
+   return;
+
+ }
+
+
+ grid.innerHTML=
+ result.map(item=>`
+
+ <article class="card">
+
+   <div class="photo">
+
+     <img
+      src="${item.image}"
+      alt="${safe(item.name)}"
+      onerror="this.src='https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80'"
+     >
+
+     ${item.badge?
+       `<div class="tag">${safe(item.badge)}</div>`
+       :""
+     }
+
+   </div>
+
+
+   <div class="cardBody">
+
+     <h3>${safe(item.name)}</h3>
+
+     <p>${safe(item.description)}</p>
+
+     <div class="cardBottom">
+
+       <span class="price">
+        Rs ${Number(item.price).toLocaleString()}
+       </span>
+
+       ${
+         item.available
+         ?
+         `<button
+           class="plus"
+           onclick="addCart(${item.id})">
+           +
+          </button>`
+         :
+         `<small style="color:#c77">
+          Unavailable
+          </small>`
+       }
+
+     </div>
+
+   </div>
+
+ </article>
+
+ `).join("");
+
+}
+
+
+/* CART */
+
+function addCart(id){
+
+ let item=
+ menu.find(x=>x.id===id);
+
+ if(!item || !item.available)return;
+
+ cart.push(item);
+
+ updateCart();
+
+}
+
+
+function updateCart(){
+
+ document.getElementById("cartCount")
+ .textContent=cart.length;
+
+ let box=
+ document.getElementById("cartItems");
+
+
+ if(!cart.length){
+
+   box.innerHTML=
+   `<div style="text-align:center;color:#777;padding:50px 10px">
+    Your order is empty.
+   </div>`;
+
+   document.getElementById("total")
+   .textContent="Rs 0";
+
+   return;
+
+ }
+
+
+ box.innerHTML=
+ cart.map((item,i)=>`
+
+ <div class="cartItem">
+
+   <div>
+    <strong>${safe(item.name)}</strong>
+    <small>
+     Rs ${Number(item.price).toLocaleString()}
+    </small>
+   </div>
+
+   <button
+    class="remove"
+    onclick="removeCart(${i})">
+    Remove
+   </button>
+
+ </div>
+
+ `).join("");
+
+
+ let total=
+ cart.reduce((a,b)=>a+Number(b.price),0);
+
+ document.getElementById("total")
+ .textContent=
+ "Rs "+total.toLocaleString();
+
+}
+
+
+function removeCart(i){
+
+ cart.splice(i,1);
+ updateCart();
+
+}
+
+
+function openCart(){
+
+ document.getElementById("cart")
+ .classList.add("open");
+
+ updateCart();
+
+}
+
+
+function closeCart(){
+
+ document.getElementById("cart")
+ .classList.remove("open");
+
+}
+
+
+function sendWhatsApp(){
+
+ if(!cart.length){
+
+   alert("Please add an item first.");
+   return;
+
+ }
+
+ let total=
+ cart.reduce((a,b)=>a+Number(b.price),0);
+
+ let message=
+ "Assalam o Alaikum, I would like to place an order:%0A%0A";
+
+ cart.forEach((item,i)=>{
+
+   message+=
+   `${i+1}. ${item.name} — Rs ${item.price}%0A`;
+
+ });
+
+ message+=
+ `%0ATotal: Rs ${total}`;
+
+ /*
+   Restaurant WhatsApp number
+   can be changed here.
+ */
+
+ let phone="923000000000";
+
+ window.open(
+  "https://wa.me/"+phone+
+  "?text="+message,
+  "_blank"
+ );
+
+}
+
+
+/* ADMIN */
+
+function openAdmin(){
+
+ document.getElementById("admin")
+ .classList.add("show");
+
+ renderAdmin();
+
+}
+
+
+function closeAdmin(){
+
+ document.getElementById("admin")
+ .classList.remove("show");
+
+ clearForm();
+
+}
+
+
+function renderAdmin(){
+
+ document.getElementById("adminList").innerHTML=
+
+ menu.map(item=>`
+
+ <div class="adminRow">
+
+   <img src="${item.image}">
+
+   <div class="adminInfo">
+
+    <strong>${safe(item.name)}</strong>
+
+    <small>
+     ${item.category}
+     • Rs ${Number(item.price).toLocaleString()}
+     • ${item.available?"Available":"Hidden"}
+    </small>
+
+   </div>
+
+   <button onclick="editItem(${item.id})">
+    Edit
+   </button>
+
+   <button onclick="toggleItem(${item.id})">
+    ${item.available?"Hide":"Show"}
+   </button>
+
+   <button
+    class="delete"
+    onclick="deleteItem(${item.id})">
+    Delete
+   </button>
+
+ </div>
+
+ `).join("");
+
+}
+
+
+function saveItem(){
+
+ let name=
+ document.getElementById("name").value.trim();
+
+ let price=
+ document.getElementById("price").value;
+
+ let category=
+ document.getElementById("category").value;
+
+ let badge=
+ document.getElementById("badge").value.trim();
+
+ let description=
+ document.getElementById("description")
+ .value.trim();
+
+
+ if(!name || !price || !description){
+
+   alert("Please fill all required fields.");
+   return;
+
+ }
+
+
+ if(editId){
+
+   let item=
+   menu.find(x=>x.id===editId);
+
+   item.name=name;
+   item.price=Number(price);
+   item.category=category;
+   item.badge=badge;
+   item.description=description;
+
+   if(uploadedImage){
+     item.image=uploadedImage;
+   }
+
+ }else{
+
+   menu.push({
+
+     id:Date.now(),
+
+     name:name,
+
+     price:Number(price),
+
+     category:category,
+
+     badge:badge,
+
+     description:description,
+
+     image:
+      uploadedImage ||
+      "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=85",
+
+     available:true
+
+   });
+
+ }
+
+
+ localStorage.setItem(
+  "davinciMenu",
+  JSON.stringify(menu)
+ );
+
+ clearForm();
+
+ renderAdmin();
+ renderFilters();
+ renderMenu();
+
+}
+
+
+function editItem(id){
+
+ let item=
+ menu.find(x=>x.id===id);
+
+ if(!item)return;
+
+ editId=id;
+
+ document.getElementById("name")
+ .value=item.name;
+
+ document.getElementById("price")
+ .value=item.price;
+
+ document.getElementById("category")
+ .value=item.category;
+
+ document.getElementById("badge")
+ .value=item.badge;
+
+ document.getElementById("description")
+ .value=item.description;
+
+ document.getElementById("preview")
+ .src=item.image;
+
+ uploadedImage=item.image;
+
+ document.getElementById("saveButton")
+ .textContent="✓ Update Item";
+
+}
+
+
+function deleteItem(id){
+
+ let item=
+ menu.find(x=>x.id===id);
+
+ if(!confirm(
+ `Delete "${item.name}"?`
+ ))return;
+
+ menu=
+ menu.filter(x=>x.id!==id);
+
+ localStorage.setItem(
+  "davinciMenu",
+  JSON.stringify(menu)
+ );
+
+ renderAdmin();
+ renderFilters();
+ renderMenu();
+
+}
+
+
+function toggleItem(id){
+
+ let item=
+ menu.find(x=>x.id===id);
+
+ item.available=
+ !item.available;
+
+ localStorage.setItem(
+  "davinciMenu",
+  JSON.stringify(menu)
+ );
+
+ renderAdmin();
+ renderMenu();
+
+}
+
+
+/* PHOTO UPLOAD */
+
+function uploadPhoto(e){
+
+ let file=e.target.files[0];
+
+ if(!file)return;
+
+ if(file.size>5*1024*1024){
+
+   alert("Please select an image under 5MB.");
+   return;
+
+ }
+
+ let reader=
+ new FileReader();
+
+ reader.onload=function(){
+
+   uploadedImage=
+   reader.result;
+
+   document.getElementById("preview")
+   .src=uploadedImage;
+
+ };
+
+ reader.readAsDataURL(file);
+
+}
+
+
+/* RESET */
+
+function clearForm(){
+
+ editId=null;
+ uploadedImage="";
+
+ document.getElementById("name").value="";
+ document.getElementById("price").value="";
+ document.getElementById("badge").value="";
+ document.getElementById("description").value="";
+ document.getElementById("photo").value="";
+
+ document.getElementById("preview").src=
+ "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=500&q=80";
+
+ document.getElementById("saveButton")
+ .textContent="＋ Add Item";
+
+}
+
+
+function safe(text){
+
+ return String(text)
+ .replace(/&/g,"&amp;")
+ .replace(/</g,"&lt;")
+ .replace(/>/g,"&gt;")
+ .replace(/"/g,"&quot;")
+ .replace(/'/g,"&#039;");
+
+}
+
+
+/* START */
+
+renderFilters();
+renderMenu();
+updateCart();
+
+</script>
+
+</body>
+</html>
